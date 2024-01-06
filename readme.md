@@ -76,10 +76,11 @@ ReactDOM.render(element, location);
 ...
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
-    ...  // js code
+  ...  // js code
 </script>
 ...
 ```
+
 위 코드에서 `type`을 지정한 `script` 태그 사이에 JS 코드를 작성하면 된다.
 
 <br>
@@ -132,4 +133,59 @@ const Button = (
     click me!
   </button>
 );
+```
+
+<br>
+
+이번에는 아래 코드를 JSX 방식으로 바꿔보자.
+```javascript
+const container = React.createElement("div", null, [Title, Button]);
+```
+<br>
+
+우선 `Title`과 `Button`을 함수로 만들어주자!
+
+```javascript
+const Title = () => (  // arrow function
+  <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+    Hello I'm a title
+  </h3>
+);
+const Button = () => (  // arrow function
+  <button
+    style={{ backgroundColor: "tomato" }}
+    onClick={() => console.log("i am click")}
+  >
+    click me!
+  </button>
+);
+```
+
+<br>
+
+함수로 만든 다음 `Container`를 이렇게 수정하자.
+
+```javascript
+const container = (
+  <div>
+    <Title /> 
+    <Button />
+  </div>
+);
+```
+
+> :star2: 컴포넌트의 첫 글자는 반드시 **대문자**여야 한다.
+
+<br>
+
+참고로 `arrow function`은 아래와 동일한 의미이다.
+
+```javascript
+function Title() {
+  return (
+    <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+      Hello I'm a title
+    </h3>
+  );
+}
 ```

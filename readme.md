@@ -53,7 +53,7 @@ React.createElement(
 
 <br>
 
-**`ReactDOM`**
+**ReactDOM**
 
 ```javascript
 ReactDOM.render(element, location);
@@ -121,6 +121,7 @@ const btn = React.createElement(
   "Click me"
 );
 ```
+<br>
 
 위 코드와 같은 의미의 JSX를 사용한 방식의 코드.
 
@@ -166,7 +167,7 @@ const Button = () => (  // arrow function
 함수로 만든 다음 `Container`를 이렇게 수정하자.
 
 ```javascript
-const container = (
+const Container = (
   <div>
     <Title /> 
     <Button />
